@@ -15,18 +15,13 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      background: #f4f6f8;
+      background: #f3f5f7;
       color: #202124;
       font-family:
         -apple-system,
         BlinkMacSystemFont,
-        "Pretendard",
         "Noto Sans KR",
         Arial,
         sans-serif;
@@ -36,7 +31,7 @@
     .container {
       width: min(1100px, 92%);
       margin: 0 auto;
-      padding: 55px 0 70px;
+      padding: 50px 0 70px;
     }
 
     header {
@@ -46,7 +41,7 @@
 
     .tag {
       display: inline-block;
-      margin-bottom: 14px;
+      margin-bottom: 13px;
       padding: 7px 16px;
       border-radius: 999px;
       background: #e8eefc;
@@ -62,15 +57,15 @@
     }
 
     .intro {
-      max-width: 720px;
+      max-width: 750px;
       margin: 0 auto;
-      color: #62666d;
+      color: #62676e;
       font-size: 17px;
       word-break: keep-all;
     }
 
     .notice {
-      margin-bottom: 44px;
+      margin-bottom: 46px;
       padding: 26px 28px;
       border-radius: 16px;
       background: white;
@@ -88,7 +83,7 @@
     }
 
     .design-section {
-      margin-bottom: 48px;
+      margin-bottom: 50px;
     }
 
     .section-heading {
@@ -102,10 +97,10 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 58px;
-      height: 36px;
-      padding: 0 14px;
-      border-radius: 9px;
+      min-width: 62px;
+      height: 38px;
+      padding: 0 15px;
+      border-radius: 10px;
       background: #253d73;
       color: white;
       font-size: 18px;
@@ -118,7 +113,7 @@
     }
 
     .section-description {
-      margin: 0 0 20px;
+      margin: 0 0 18px;
       color: #666;
       word-break: keep-all;
     }
@@ -126,28 +121,35 @@
     .design-card {
       overflow: hidden;
       padding: 18px;
-      border: 1px solid #e5e8ed;
+      border: 1px solid #e4e7ec;
       border-radius: 18px;
       background: white;
       box-shadow: 0 7px 24px rgba(0, 0, 0, 0.07);
     }
 
-    .design-card a {
+    .image-link {
       display: block;
-      border-radius: 12px;
       overflow: hidden;
+      border-radius: 12px;
+      background: #d9f0fb;
     }
 
     .design-image {
       display: block;
       width: 100%;
       height: auto;
-      transition: transform 0.25s;
       cursor: zoom-in;
     }
 
-    .design-card a:hover .design-image {
-      transform: scale(1.01);
+    .image-error {
+      display: none;
+      padding: 30px 20px;
+      border: 2px dashed #d66;
+      border-radius: 10px;
+      background: #fff5f5;
+      color: #8b3030;
+      text-align: center;
+      word-break: break-all;
     }
 
     .zoom-guide {
@@ -158,9 +160,9 @@
     }
 
     .color-list {
-      margin: 18px 0 0;
-      padding: 16px;
-      border-radius: 12px;
+      margin: 17px 0 0;
+      padding: 15px;
+      border-radius: 11px;
       background: #f7f8fa;
       color: #4f5359;
       font-size: 16px;
@@ -185,7 +187,7 @@
 
     .survey-area p {
       margin: 0 0 24px;
-      color: #e4e9f8;
+      color: #e5eaff;
       word-break: keep-all;
     }
 
@@ -198,14 +200,10 @@
       font-size: 17px;
       font-weight: 700;
       text-decoration: none;
-      transition:
-        transform 0.2s,
-        box-shadow 0.2s;
     }
 
     .survey-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      background: #eef2ff;
     }
 
     footer {
@@ -225,7 +223,11 @@
       }
 
       .notice {
-        padding: 22px;
+        padding: 21px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
       }
 
       .section-title {
@@ -233,7 +235,7 @@
       }
 
       .design-card {
-        padding: 10px;
+        padding: 9px;
       }
 
       .color-list {
@@ -257,8 +259,8 @@
       <h1>졸업앨범 표지 시안</h1>
 
       <p class="intro">
-        아래의 A안과 B안을 확인하신 후,
-        가장 적합하다고 생각하는 디자인과 색상을 한 가지 선택해 주세요.
+        아래의 A안과 B안을 모두 확인하신 후,
+        가장 적합하다고 생각하는 디자인과 색상을 선택해 주세요.
       </p>
     </header>
 
@@ -272,7 +274,7 @@
 
       <p>
         <strong>응답 기한:</strong>
-        2026년 7월 21일(화)까지
+        <span id="deadline"></span>
       </p>
 
       <p>
@@ -282,8 +284,8 @@
 
       <p>
         <strong>선택 방법:</strong>
-        A안과 B안의 시안을 모두 살펴본 후,
-        구글 설문에서 한 가지를 선택해 주세요.
+        A안과 B안을 모두 살펴본 후,
+        아래의 의견 제출 버튼을 눌러 구글 설문에 응답해 주세요.
       </p>
     </section>
 
@@ -295,24 +297,29 @@
       </div>
 
       <p class="section-description">
-        흰색 바탕을 중심으로 색상 띠가 배치된 디자인입니다.
+        흰색 바탕에 가로와 세로 방향의 색상 띠가 배치된 디자인입니다.
       </p>
 
       <article class="design-card">
         <a
-          href="a.jpg"
+          id="coverALink"
+          class="image-link"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
+            id="coverA"
             class="design-image"
-            src="a.jpg"
+            src=""
             alt="졸업앨범 표지 A안 6가지 색상"
           >
         </a>
 
+        <div id="coverAError" class="image-error"></div>
+
         <p class="zoom-guide">
-          이미지를 누르면 원본 크기로 볼 수 있습니다.
+          이미지를 누르면 원본 크기로 확인할 수 있습니다.
         </p>
 
         <p class="color-list">
@@ -330,24 +337,29 @@
       </div>
 
       <p class="section-description">
-        표지의 넓은 영역에 색상과 질감이 강조된 디자인입니다.
+        넓은 색상 영역과 원단의 질감이 강조된 디자인입니다.
       </p>
 
       <article class="design-card">
         <a
-          href="b.jpg"
+          id="coverBLink"
+          class="image-link"
+          href="#"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
+            id="coverB"
             class="design-image"
-            src="b.jpg"
+            src=""
             alt="졸업앨범 표지 B안 6가지 색상"
           >
         </a>
 
+        <div id="coverBError" class="image-error"></div>
+
         <p class="zoom-guide">
-          이미지를 누르면 원본 크기로 볼 수 있습니다.
+          이미지를 누르면 원본 크기로 확인할 수 있습니다.
         </p>
 
         <p class="color-list">
@@ -357,17 +369,18 @@
       </article>
     </section>
 
-    <!-- 설문 버튼 -->
+    <!-- 구글 설문 버튼 -->
     <section class="survey-area">
       <h2>선호하는 표지를 선택해 주세요</h2>
 
       <p>
-        아래 버튼을 누르면 구글 설문으로 이동합니다.
+        아래 버튼을 누르면 구글 설문 응답 화면으로 이동합니다.
       </p>
 
       <a
+        id="surveyButton"
         class="survey-button"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSe08hw4wkb0ckyOrIT4_EzIxs3FLbgzKjeRGgfXmLm6dB91YQ/viewform?usp=dialog"
+        href="#"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -376,9 +389,73 @@
     </section>
 
     <footer>
-      수청중학교 졸업앨범 제작 담당
+      <span id="school"></span>
     </footer>
 
   </main>
+
+  <script>
+    /*
+      아래 설정 부분만 수정하세요.
+      따옴표는 그대로 두고 따옴표 안의 내용만 바꾸세요.
+    */
+
+    const CONFIG = {
+      coverA: "cover-a.jpg",
+      coverB: "cover-b.jpg",
+
+      googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe08hw4wkb0ckyOrIT4_EzIxs3FLbgzKjeRGgfXmLm6dB91YQ/viewform?usp=dialog",
+
+      deadline: "2026년 7월 21일(화)까지",
+
+      school: "수청중학교 졸업앨범 제작 담당"
+    };
+
+    /*
+      아래 코드는 수정하지 않아도 됩니다.
+    */
+
+    const coverA = document.getElementById("coverA");
+    const coverB = document.getElementById("coverB");
+
+    const coverALink = document.getElementById("coverALink");
+    const coverBLink = document.getElementById("coverBLink");
+
+    const coverAError = document.getElementById("coverAError");
+    const coverBError = document.getElementById("coverBError");
+
+    coverA.src = CONFIG.coverA;
+    coverB.src = CONFIG.coverB;
+
+    coverALink.href = CONFIG.coverA;
+    coverBLink.href = CONFIG.coverB;
+
+    document.getElementById("surveyButton").href =
+      CONFIG.googleFormUrl;
+
+    document.getElementById("deadline").textContent =
+      CONFIG.deadline;
+
+    document.getElementById("school").textContent =
+      CONFIG.school;
+
+    coverA.onerror = function () {
+      coverALink.style.display = "none";
+      coverAError.style.display = "block";
+
+      coverAError.textContent =
+        "A안 이미지를 찾을 수 없습니다. 실제 파일명을 확인해 주세요: "
+        + CONFIG.coverA;
+    };
+
+    coverB.onerror = function () {
+      coverBLink.style.display = "none";
+      coverBError.style.display = "block";
+
+      coverBError.textContent =
+        "B안 이미지를 찾을 수 없습니다. 실제 파일명을 확인해 주세요: "
+        + CONFIG.coverB;
+    };
+  </script>
 </body>
 </html>
