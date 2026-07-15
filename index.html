@@ -3,14 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>졸업앨범 표지 의견수렴</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(900px, 92%);
+      margin: 0 auto;
+      padding: 50px 0;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 36px;
+    }
+
+    .description {
+      color: #666;
+    }
+
+    .notice {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .covers {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .cover-card {
+      background: white;
+      padding: 18px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .cover-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .button-area {
+      margin-top: 35px;
+      text-align: center;
+    }
+
+    .survey-button {
+      display: inline-block;
+      padding: 15px 28px;
+      background: #3157a4;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .survey-button:hover {
+      background: #244587;
+    }
+
+    @media (max-width: 650px) {
+      .covers {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>졸업앨범 표지 의견수렴</h1>
+  <main class="container">
 
-  <p>
-    이 페이지가 보인다면 GitHub Pages 연결이 정상적으로 완료된 것입니다.
-  </p>
+    <header>
+      <h1>졸업앨범 표지 의견수렴</h1>
+
+      <p class="description">
+        표지 시안을 확인하신 후 의견을 제출해 주시기 바랍니다.
+      </p>
+    </header>
+
+    <section class="notice">
+      <h2>안내</h2>
+
+      <p><strong>의견수렴 기한:</strong> 2026년 ○월 ○일(○)까지</p>
+
+      <p>
+        <strong>검토 사항:</strong>
+        색상, 글자 배치, 가독성, 학교 이미지와의 적합성
+      </p>
+    </section>
+
+    <section class="covers">
+
+      <article class="cover-card">
+        <h2>A안</h2>
+        <img src="cover-a.jpg" alt="졸업앨범 표지 A안">
+      </article>
+
+      <article class="cover-card">
+        <h2>B안</h2>
+        <img src="cover-b.jpg" alt="졸업앨범 표지 B안">
+      </article>
+
+    </section>
+
+    <section class="button-area">
+      <a
+        class="survey-button"
+        href="https://forms.gle/https://docs.google.com/forms/d/e/1FAIpQLSe08hw4wkb0ckyOrIT4_EzIxs3FLbgzKjeRGgfXmLm6dB91YQ/viewform?usp=dialog"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        의견 제출하기
+      </a>
+    </section>
+
+  </main>
 </body>
 </html>
