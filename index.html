@@ -2,7 +2,11 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>졸업앨범 표지 의견수렴</title>
 
@@ -11,14 +15,22 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: #f4f6f8;
       color: #202124;
       font-family:
-        -apple-system, BlinkMacSystemFont,
-        "Pretendard", "Noto Sans KR", Arial, sans-serif;
-      line-height: 1.6;
+        -apple-system,
+        BlinkMacSystemFont,
+        "Pretendard",
+        "Noto Sans KR",
+        Arial,
+        sans-serif;
+      line-height: 1.7;
     }
 
     .container {
@@ -28,133 +40,172 @@
     }
 
     header {
-      margin-bottom: 35px;
+      margin-bottom: 36px;
       text-align: center;
     }
 
     .tag {
       display: inline-block;
-      margin-bottom: 12px;
-      padding: 7px 15px;
-      border-radius: 20px;
-      background: #e7eefc;
+      margin-bottom: 14px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: #e8eefc;
       color: #3157a4;
       font-size: 14px;
       font-weight: 700;
     }
 
     h1 {
-      margin: 0 0 15px;
+      margin: 0 0 14px;
       font-size: 40px;
       line-height: 1.3;
     }
 
-    .description {
+    .intro {
       max-width: 720px;
       margin: 0 auto;
       color: #62666d;
       font-size: 17px;
+      word-break: keep-all;
     }
 
     .notice {
-      margin-bottom: 45px;
-      padding: 25px 28px;
+      margin-bottom: 44px;
+      padding: 26px 28px;
       border-radius: 16px;
       background: white;
       box-shadow: 0 7px 25px rgba(0, 0, 0, 0.06);
     }
 
     .notice h2 {
-      margin: 0 0 12px;
-      font-size: 21px;
+      margin: 0 0 14px;
+      font-size: 22px;
     }
 
     .notice p {
-      margin: 7px 0;
+      margin: 8px 0;
+      word-break: keep-all;
     }
 
     .design-section {
-      margin-bottom: 50px;
+      margin-bottom: 48px;
     }
 
-    .section-title {
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       margin-bottom: 10px;
-      font-size: 29px;
     }
 
-    .section-description {
-      margin-top: 0;
-      margin-bottom: 22px;
-      color: #666;
-    }
-
-    .covers {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .cover-card {
-      overflow: hidden;
-      border: 1px solid #e7e9ed;
-      border-radius: 16px;
-      background: white;
-      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.06);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .cover-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.10);
-    }
-
-    .cover-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .cover-name {
-      margin: 0;
-      padding: 14px;
-      text-align: center;
-      font-size: 19px;
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 58px;
+      height: 36px;
+      padding: 0 14px;
+      border-radius: 9px;
+      background: #253d73;
+      color: white;
+      font-size: 18px;
       font-weight: 700;
     }
 
-    .survey-area {
-      padding: 35px 25px;
+    .section-title {
+      margin: 0;
+      font-size: 27px;
+    }
+
+    .section-description {
+      margin: 0 0 20px;
+      color: #666;
+      word-break: keep-all;
+    }
+
+    .design-card {
+      overflow: hidden;
+      padding: 18px;
+      border: 1px solid #e5e8ed;
       border-radius: 18px;
+      background: white;
+      box-shadow: 0 7px 24px rgba(0, 0, 0, 0.07);
+    }
+
+    .design-card a {
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .design-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.25s;
+      cursor: zoom-in;
+    }
+
+    .design-card a:hover .design-image {
+      transform: scale(1.01);
+    }
+
+    .zoom-guide {
+      margin: 14px 0 5px;
+      color: #73777e;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .color-list {
+      margin: 18px 0 0;
+      padding: 16px;
+      border-radius: 12px;
+      background: #f7f8fa;
+      color: #4f5359;
+      font-size: 16px;
+      line-height: 1.9;
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    .survey-area {
+      margin-top: 58px;
+      padding: 38px 25px;
+      border-radius: 20px;
       background: #253d73;
       color: white;
       text-align: center;
     }
 
     .survey-area h2 {
-      margin-top: 0;
-      margin-bottom: 8px;
+      margin: 0 0 9px;
+      font-size: 27px;
     }
 
     .survey-area p {
-      margin-top: 0;
-      margin-bottom: 22px;
-      color: #e5eaff;
+      margin: 0 0 24px;
+      color: #e4e9f8;
+      word-break: keep-all;
     }
 
     .survey-button {
       display: inline-block;
-      padding: 15px 30px;
-      border-radius: 10px;
+      padding: 15px 32px;
+      border-radius: 11px;
       background: white;
       color: #253d73;
       font-size: 17px;
       font-weight: 700;
       text-decoration: none;
-      transition: transform 0.2s;
+      transition:
+        transform 0.2s,
+        box-shadow 0.2s;
     }
 
     .survey-button:hover {
       transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
     }
 
     footer {
@@ -164,31 +215,34 @@
       text-align: center;
     }
 
-    @media (max-width: 800px) {
-      .covers {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      h1 {
-        font-size: 33px;
-      }
-    }
-
-    @media (max-width: 520px) {
+    @media (max-width: 700px) {
       .container {
         padding-top: 35px;
       }
 
-      .covers {
-        grid-template-columns: 1fr;
-      }
-
       h1 {
-        font-size: 28px;
+        font-size: 30px;
       }
 
       .notice {
-        padding: 21px;
+        padding: 22px;
+      }
+
+      .section-title {
+        font-size: 23px;
+      }
+
+      .design-card {
+        padding: 10px;
+      }
+
+      .color-list {
+        font-size: 15px;
+        text-align: left;
+      }
+
+      .survey-area {
+        padding: 32px 20px;
       }
     }
   </style>
@@ -202,8 +256,8 @@
 
       <h1>졸업앨범 표지 시안</h1>
 
-      <p class="description">
-        아래의 표지 시안을 확인하신 후,
+      <p class="intro">
+        아래의 A안과 B안을 확인하신 후,
         가장 적합하다고 생각하는 디자인과 색상을 한 가지 선택해 주세요.
       </p>
     </header>
@@ -223,104 +277,92 @@
 
       <p>
         <strong>검토 사항:</strong>
-        색상, 가독성, 글자 배치, 학교 이미지와의 적합성
+        디자인, 색상, 가독성, 학교 이미지와의 적합성
       </p>
 
       <p>
         <strong>선택 방법:</strong>
-        A안과 B안을 모두 살펴본 후 총 12개 시안 중 한 가지를 선택해 주세요.
+        A안과 B안의 시안을 모두 살펴본 후,
+        구글 설문에서 한 가지를 선택해 주세요.
       </p>
     </section>
 
+    <!-- A안 -->
     <section class="design-section">
-      <h2 class="section-title">A안</h2>
+      <div class="section-heading">
+        <span class="section-label">A안</span>
+        <h2 class="section-title">칼라밴드 디자인</h2>
+      </div>
 
       <p class="section-description">
-        A안의 6가지 색상입니다.
+        흰색 바탕을 중심으로 색상 띠가 배치된 디자인입니다.
       </p>
 
-      <div class="covers">
+      <article class="design-card">
+        <a
+          href="a.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="design-image"
+            src="a.jpg"
+            alt="졸업앨범 표지 A안 6가지 색상"
+          >
+        </a>
 
-        <article class="cover-card">
-          <img src="a1.jpg" alt="졸업앨범 표지 A-1안">
-          <p class="cover-name">A-1</p>
-        </article>
+        <p class="zoom-guide">
+          이미지를 누르면 원본 크기로 볼 수 있습니다.
+        </p>
 
-        <article class="cover-card">
-          <img src="a2.jpg" alt="졸업앨범 표지 A-2안">
-          <p class="cover-name">A-2</p>
-        </article>
-
-        <article class="cover-card">
-          <img src="a3.jpg" alt="졸업앨범 표지 A-3안">
-          <p class="cover-name">A-3</p>
-        </article>
-
-        <article class="cover-card">
-          <img src="a4.jpg" alt="졸업앨범 표지 A-4안">
-          <p class="cover-name">A-4</p>
-        </article>
-
-        <article class="cover-card">
-          <img src="a5.jpg" alt="졸업앨범 표지 A-5안">
-          <p class="cover-name">A-5</p>
-        </article>
-
-        <article class="cover-card">
-          <img src="a6.jpg" alt="졸업앨범 표지 A-6안">
-          <p class="cover-name">A-6</p>
-        </article>
-
-      </div>
+        <p class="color-list">
+          A-31 자주색 · A-32 파랑색 · A-33 밤색 ·
+          A-34 연회색 · A-35 진회색 · A-37 옥색
+        </p>
+      </article>
     </section>
 
+    <!-- B안 -->
     <section class="design-section">
-      <h2 class="section-title">B안</h2>
+      <div class="section-heading">
+        <span class="section-label">B안</span>
+        <h2 class="section-title">아레미싱 디자인</h2>
+      </div>
 
       <p class="section-description">
-        B안의 6가지 색상입니다.
+        표지의 넓은 영역에 색상과 질감이 강조된 디자인입니다.
       </p>
 
-      <div class="covers">
+      <article class="design-card">
+        <a
+          href="b.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="design-image"
+            src="b.jpg"
+            alt="졸업앨범 표지 B안 6가지 색상"
+          >
+        </a>
 
-        <article class="cover-card">
-          <img src="b1.jpg" alt="졸업앨범 표지 B-1안">
-          <p class="cover-name">B-1</p>
-        </article>
+        <p class="zoom-guide">
+          이미지를 누르면 원본 크기로 볼 수 있습니다.
+        </p>
 
-        <article class="cover-card">
-          <img src="b2.jpg" alt="졸업앨범 표지 B-2안">
-          <p class="cover-name">B-2</p>
-        </article>
-
-        <article class="cover-card">
-          <img src="b3.jpg" alt="졸업앨범 표지 B-3안">
-          <p class="cover-name">B-3</p>
-        </article>
-
-        <article class="cover-card">
-          <img src="b4.jpg" alt="졸업앨범 표지 B-4안">
-          <p class="cover-name">B-4</p>
-        </article>
-
-        <article class="cover-card">
-          <img src="b5.jpg" alt="졸업앨범 표지 B-5안">
-          <p class="cover-name">B-5</p>
-        </article>
-
-        <article class="cover-card">
-          <img src="b6.jpg" alt="졸업앨범 표지 B-6안">
-          <p class="cover-name">B-6</p>
-        </article>
-
-      </div>
+        <p class="color-list">
+          B-31 자주색 · B-32 파랑색 · B-33 밤색 ·
+          B-34 연회색 · B-35 진회색 · B-37 옥색
+        </p>
+      </article>
     </section>
 
+    <!-- 설문 버튼 -->
     <section class="survey-area">
       <h2>선호하는 표지를 선택해 주세요</h2>
 
       <p>
-        버튼을 누르면 구글 설문으로 이동합니다.
+        아래 버튼을 누르면 구글 설문으로 이동합니다.
       </p>
 
       <a
